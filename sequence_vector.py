@@ -16,7 +16,7 @@ data = {
 
 def sequence_vector(data):
     for k, v in data.items():
-        v.discard(k)  # Ignore self dependencies
+        v.discard(k) 
     extra_items_in_deps = reduce(set.union, data.values()) - set(data.keys())
     data.update({item: set() for item in extra_items_in_deps})
     while True:
